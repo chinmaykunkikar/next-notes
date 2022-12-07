@@ -5,12 +5,12 @@ export const dynamic = "auto",
     dynamicParams = true,
     revalidate = 0,
     fetchCache = 'auto',
-    runtime = 'nodejs',
-    prefferedRegion = 'auto'
+    runtime = 'nodejs'
 
 async function getNotes() {
-    const db = new PocketBase('http://127.0.0.1:8090/')
-    const data = await db.collection('notes').getList()
+    const pb = new PocketBase(process.env.PB_HOST);
+    const authData = await pb.admins.authWithPassword(process.env.PB_USER, process.env.PB_PASS);
+    const data = await pb.collection('notes').getList()
     return data?.items as any[]
 }
 
