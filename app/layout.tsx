@@ -10,7 +10,9 @@ export default function RootLayout({
 }) {
   return (
     <html>
-      <head></head>
+      <head>
+        <title>Next CRUD App</title>
+      </head>
       <body>
         <main>
           <nav>
