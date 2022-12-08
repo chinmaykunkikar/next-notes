@@ -11,7 +11,7 @@ export const dynamic = "auto",
 async function getNotes() {
   const pb = new PocketBase(process.env.NEXT_PUBLIC_PB_HOST);
   await pb.admins.authWithPassword(process.env.NEXT_PUBLIC_PB_USER, process.env.NEXT_PUBLIC_PB_PASS);
-  const data = await pb.collection("notes").getList();
+  const data = await pb.collection(process.env.NEXT_PUBLIC_PB_COLLECTION).getList();
   return data?.items as any[];
 }
 

@@ -23,7 +23,7 @@ export default function CreateNote() {
       content: content,
     };
 
-    await pb.collection("notes").create(data);
+    await pb.collection(process.env.NEXT_PUBLIC_PB_COLLECTION).create(data);
 
     setContent("");
     setTitle("");
