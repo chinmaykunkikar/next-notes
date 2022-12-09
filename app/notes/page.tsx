@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PocketBase from "pocketbase";
 import CreateNote from "./CreateNote";
+import styles from "./Notes.module.css";
 
 export const dynamic = "auto",
   dynamicParams = true,
@@ -10,8 +11,13 @@ export const dynamic = "auto",
 
 async function getNotes() {
   const pb = new PocketBase(process.env.NEXT_PUBLIC_PB_HOST);
-  await pb.admins.authWithPassword(process.env.NEXT_PUBLIC_PB_USER, process.env.NEXT_PUBLIC_PB_PASS);
-  const data = await pb.collection(process.env.NEXT_PUBLIC_PB_COLLECTION).getList();
+  await pb.admins.authWithPassword(
+    process.env.NEXT_PUBLIC_PB_USER,
+    process.env.NEXT_PUBLIC_PB_PASS
+  );
+  const data = await pb
+    .collection(process.env.NEXT_PUBLIC_PB_COLLECTION)
+    .getList();
   return data?.items as any[];
 }
 
@@ -20,8 +26,8 @@ export default async function NotesPage() {
 
   return (
     <div>
-      <h1>Notes</h1>
-      <div>
+      <h1 className={styles.pageTitle}>Notes</h1>
+      <div className={styles.grid}>
         {notes?.map((note) => (
           <Note key={note.id} note={note} />
         ))}
@@ -36,10 +42,10 @@ function Note({ note }: any) {
 
   return (
     <Link href={`notes/${id}`}>
-      <div>
-        <h2>{title}</h2>
-        <h5>{content}</h5>
-        <p>{created}</p>
+      <div className={styles.note}>
+        <h2 className={styles.title}>{title}</h2>
+        <h5 className={styles.content}>{content}</h5>
+        <p className={styles.created}>{created}</p>
       </div>
     </Link>
   );

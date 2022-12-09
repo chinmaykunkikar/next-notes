@@ -1,7 +1,6 @@
 .pageTitle {
   margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
+  font-size: 3rem;
 }
 
 .grid {
@@ -10,7 +9,6 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-wrap: wrap;
-  max-width: 1000px;
 }
 
 .action {
@@ -20,34 +18,22 @@
 
 .note {
   height: auto;
-  width: 200px;
-  padding: 0.2rem 1rem;
-  margin: 0.5rem;
-  background: #ffff00;
-  box-shadow: 4px 4px 8px 1px #00000075;
-  border-radius: 2px;
+  width: 15rem;
+  margin: 1rem;
+  padding: 1rem;
+  background: hsl(185, 75%, 75%);
+  box-shadow: 2px 2px 8px 1px hsl(185, 75%, 85%, 0.5);
+  border: solid 4px hsl(185, 75%, 25%);
+  border-radius: 0.5rem;
 }
 
 .container {
   padding: 0 2rem;
 }
 
-.pageTitle {
-  margin: 0;
-  line-height: 1.15;
-  font-size: 3rem;
-}
-
-.note {
-  height: auto;
-  width: 200px;
-  padding: 0.25rem;
-  border-radius: 2px;
-}
-
 .title {
   padding: 0.1rem;
-  font-size: 1rem;
+  font-size: big;
 }
 
 .content {
@@ -58,9 +44,4 @@
 .created {
   font-size: 0.7rem;
   font-weight: lighter;
-}
-
-.action {
-  text-align: left;
-  color: dodgerblue;
 }

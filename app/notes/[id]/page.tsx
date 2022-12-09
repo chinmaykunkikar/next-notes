@@ -9,21 +9,26 @@ export const dynamic = "auto",
 
 async function getNote(noteId: string) {
   const pb = new PocketBase(process.env.NEXT_PUBLIC_PB_HOST);
-  await pb.admins.authWithPassword(process.env.NEXT_PUBLIC_PB_USER, process.env.NEXT_PUBLIC_PB_PASS);
-  const data = await pb.collection(process.env.NEXT_PUBLIC_PB_COLLECTION).getOne(noteId);
+  await pb.admins.authWithPassword(
+    process.env.NEXT_PUBLIC_PB_USER,
+    process.env.NEXT_PUBLIC_PB_PASS
+  );
+  const data = await pb
+    .collection(process.env.NEXT_PUBLIC_PB_COLLECTION)
+    .getOne(noteId);
   return data;
 }
 
 export default async function NotePage({ params }: any) {
-  const note = await getNote(params.id);
+  const { id, title, content, created } = await getNote(params.id);
 
   return (
     <div>
-      <h1>notes/{note.id}</h1>
+      <h1>notes/{id}</h1>
       <div className={styles.note}>
-        <h3>{note.title}</h3>
-        <h5>{note.content}</h5>
-        <p>{note.created}</p>
+        <h2 className={styles.title}>{title}</h2>
+        <h5 className={styles.content}>{content}</h5>
+        <p className={styles.created}>{created}</p>
       </div>
     </div>
   );
