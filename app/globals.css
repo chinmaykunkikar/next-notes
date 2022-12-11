@@ -32,6 +32,7 @@ textarea {
   display: block;
   margin: 0.5rem 0;
   padding: 0.5rem;
+  resize: vertical;
 }
 
 form {
@@ -51,7 +52,7 @@ button {
   border-radius: 0.4rem;
   color: white;
   padding: 0.5rem 2rem;
-  margin: 1rem 0;
+  margin: 0.5rem 0;
   text-align: center;
   text-decoration: none;
   display: inline-block;
