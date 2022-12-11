@@ -45,3 +45,12 @@
   font-size: 0.7rem;
   font-weight: lighter;
 }
+
+.btnGroup {
+  margin-left: 1rem;
+}
+
+.btnGroup button {
+  margin-right: 0.5rem;
+  margin-top: 0;
+}

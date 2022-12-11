@@ -1,5 +1,6 @@
 import styles from "../Notes.module.css";
 import PocketBase from "pocketbase";
+import NoteActions from "./NoteActions";
 
 export const dynamic = "auto",
   dynamicParams = true,
@@ -30,6 +31,7 @@ export default async function NotePage({ params }: any) {
         <h5 className={styles.content}>{content}</h5>
         <p className={styles.created}>{created}</p>
       </div>
+      <NoteActions noteId={id} noteTitle={title} noteContent={content} />
     </div>
   );
 }
