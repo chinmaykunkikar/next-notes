@@ -16,7 +16,6 @@ export default function CreateNote() {
       process.env.NEXT_PUBLIC_PB_USER,
       process.env.NEXT_PUBLIC_PB_PASS
     );
-    console.log(authData);
 
     const data = {
       title: title,
