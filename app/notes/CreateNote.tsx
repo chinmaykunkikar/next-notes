@@ -32,22 +32,24 @@ export default function CreateNote() {
   }
 
   return (
-    <form onSubmit={addNote}>
-      <h3>Add a new note</h3>
-      <input
-        type="text"
-        id="new-note-title"
-        placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
-      <textarea
-        id="new-note-content"
-        placeholder="Body"
-        value={content}
-        onChange={(e) => setContent(e.target.value)}
-      />
-      <button type="submit">Add Note</button>
-    </form>
+    <div>
+      <form onSubmit={addNote}>
+        <h3>Add a new note</h3>
+        <input
+          type="text"
+          id="new-note-title"
+          placeholder="Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+        />
+        <textarea
+          id="new-note-content"
+          placeholder="Body"
+          value={content}
+          onChange={(e) => setContent(e.target.value)}
+        />
+        <button type="submit">Add Note</button>
+      </form>
+    </div>
   );
 }
