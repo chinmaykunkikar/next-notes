@@ -22,7 +22,7 @@ touch .env.local
 ```text
 NEXT_PUBLIC_PB_HOST=            // PocketBase URL (http://127.0.0.1:8090/)
 NEXT_PUBLIC_PB_COLLECTION=      // PocketBase collection name ('notes')
-NEXT_PUBLIC_PB_USER=            // PocetBase username
+NEXT_PUBLIC_PB_USER=            // PocketBase username
 NEXT_PUBLIC_PB_PASS=            // PocketBase password
 ```
 
