@@ -1,34 +1,37 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## NextJS notes app - [next-notes-app-inky.vercel.app](https://next-notes-app-inky.vercel.app/)
+> A notes app built using [NextJS](https://nextjs.org/) and [PocketBase](https://pocketbase.io/).
 
-## Getting Started
 
-First, run the development server:
+### To get started...
 
 ```bash
-npm run dev
-# or
-yarn dev
+git clone https://github.com/chinmaykunkikar/next-notes.git
+```
+0. Follow the instructions from [official PocketBase documentaion](https://pocketbase.io/docs/), or host the backend using [pockethost.io](https://pockethost.io/).
+
+1. Create a PocketBase collection (say _notes_) with two fields - `title` and `content`.
+
+2. Create a `.env.local` file in the project root to store secrets and environment variables
+
+```bash
+touch .env.local
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Set the following varibles in the `.env.local` file -
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+```text
+NEXT_PUBLIC_PB_HOST=            // PocketBase URL (http://127.0.0.1:8090/)
+NEXT_PUBLIC_PB_COLLECTION=      // PocketBase collection name ('notes')
+NEXT_PUBLIC_PB_USER=            // PocetBase username
+NEXT_PUBLIC_PB_PASS=            // PocketBase password
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+4. Install npm dependencies
+```bash
+npm install
+```
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+5. To run the app, use
+```bash
+npm run dev
+```
